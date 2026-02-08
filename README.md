@@ -1,17 +1,13 @@
 # contriband
 
+[![CI](https://github.com/timainge/contriband-cli/actions/workflows/ci.yml/badge.svg)](https://github.com/timainge/contriband-cli/actions/workflows/ci.yml)
+
 CLI tool to paint GitHub contribution grids. Create art on your contribution graph by generating backdated commits.
 
 ## Install
 
 ```bash
 pip install -e .
-```
-
-For image-to-template support:
-
-```bash
-pip install -e ".[images]"
 ```
 
 ## Quick Start
@@ -21,7 +17,7 @@ pip install -e ".[images]"
 contriband text "HELLO" --output hello.toml
 
 # Preview in terminal
-contriband show hello.toml
+contriband preview hello.toml
 
 # Generate a commit plan
 contriband plan hello.toml --repo /path/to/repo
@@ -36,7 +32,8 @@ contriband apply plan.json
 | Command | Description |
 |---------|-------------|
 | `text` | Convert text to a pixel template using built-in 5x7 font |
-| `show` | Render a template in the terminal (Rich) or as SVG |
+| `preview` | Render a template in the terminal |
+| `export` | Export a template to SVG |
 | `plan` | Generate a date-based commit plan from a template |
 | `apply` | Execute commits from a plan file |
 | `config` | Show current configuration |
