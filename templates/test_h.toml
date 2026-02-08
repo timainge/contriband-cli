@@ -1,0 +1,25 @@
+# Example TOML template - Letter H
+# TOML templates support custom legends and metadata
+
+[template]
+name = "letter-h"
+description = "A simple H pattern for testing"
+
+[legend]
+# Maps characters to contribution levels (0-4)
+# Position in string = level (first char = level 0)
+# Using default: .:-=# maps to levels 0,1,2,3,4
+chars = ".:-=#"
+
+[grid]
+# 7 rows (one per weekday), any width
+# Using # (level 4) for visible pixels, . (level 0) for empty
+data = """
+##..##
+##..##
+######
+##..##
+##..##
+##..##
+......
+"""
