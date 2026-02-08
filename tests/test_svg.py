@@ -1,11 +1,8 @@
 """Tests for SVG rendering."""
 
-import pytest
 
 from contriband.render.svg import (
-    DEFAULT_CELL_SIZE,
     DEFAULT_CORNER_RADIUS,
-    DEFAULT_GAP,
     GITHUB_COLORS,
     render_template_svg,
 )
@@ -150,9 +147,8 @@ class TestSvgIntegration:
         result = render_template_svg(template)
 
         assert "</svg>" in result
-        # Should have 52 * 7 = 364 cells
-        cell_count = result.count(f'rx="{DEFAULT_CORNER_RADIUS}"/')
-        # Each cell rect ends with rx="2"/>
+        # Should have cells with corner radius
+        assert f'rx="{DEFAULT_CORNER_RADIUS}"' in result
 
     def test_all_zeros(self):
         """Can render an all-empty template."""

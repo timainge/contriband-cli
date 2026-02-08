@@ -50,13 +50,17 @@ def render_template_svg(
 
     # Build SVG
     lines = [
-        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {svg_width} {svg_height}" width="{svg_width}" height="{svg_height}">',
+        f'<svg xmlns="http://www.w3.org/2000/svg"'
+        f' viewBox="0 0 {svg_width} {svg_height}"'
+        f' width="{svg_width}" height="{svg_height}">',
     ]
 
     # Background
     if show_background:
+        rx = corner_radius * 2
         lines.append(
-            f'  <rect width="{svg_width}" height="{svg_height}" fill="{BACKGROUND_COLOR}" rx="{corner_radius * 2}"/>'
+            f'  <rect width="{svg_width}" height="{svg_height}"'
+            f' fill="{BACKGROUND_COLOR}" rx="{rx}"/>'
         )
 
     # Render cells

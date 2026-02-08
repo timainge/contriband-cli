@@ -94,7 +94,7 @@ class TestRenderTemplate:
         # Labels shouldn't appear at start of lines
         lines = output.strip().split("\n")
         # Skip header lines, check grid lines don't start with weekday
-        grid_lines = [l for l in lines if "██" in l]
+        grid_lines = [line for line in lines if "██" in line]
         for line in grid_lines:
             assert not line.strip().startswith("Sun")
             assert not line.strip().startswith("Mon")
@@ -103,5 +103,5 @@ class TestRenderTemplate:
         """Should render all 7 rows."""
         output = render_template_to_string(simple_template)
         # Count lines with block characters
-        block_lines = [l for l in output.split("\n") if "██" in l]
+        block_lines = [line for line in output.split("\n") if "██" in line]
         assert len(block_lines) == 7

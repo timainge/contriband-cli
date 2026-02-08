@@ -1,11 +1,12 @@
 """Tests for template loading and parsing."""
 
-import pytest
 from pathlib import Path
+
+import pytest
 
 from contriband.templates.errors import TemplateError
 from contriband.templates.loader import load_template, parse_toml_template, parse_txt_template
-from contriband.templates.model import Template, DEFAULT_LEGEND
+from contriband.templates.model import DEFAULT_LEGEND, Template
 
 
 class TestParseTemplate:

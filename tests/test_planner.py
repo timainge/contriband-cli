@@ -8,7 +8,6 @@ from pathlib import Path
 import pytest
 
 from contriband.planner import (
-    DEFAULT_LEVEL_MAPPING,
     DayPlan,
     Plan,
     create_plan,

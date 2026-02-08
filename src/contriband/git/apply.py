@@ -6,7 +6,7 @@ from pathlib import Path
 
 from contriband.planner.model import DayPlan, Plan
 
-from .runner import GitError, RepoStatus, check_repo_status, run_git
+from .runner import GitError, check_repo_status, run_git
 
 
 @dataclass

@@ -35,8 +35,6 @@ def _align_to_week_start(d: date, week_start: str) -> date:
     Returns:
         Date of the week's first day
     """
-    target_weekday = _get_week_start_offset(week_start)
-
     if week_start.upper() == "SUNDAY":
         # For Sunday start: Sunday=0, Monday=1, ..., Saturday=6
         # Python weekday: Monday=0, ..., Sunday=6

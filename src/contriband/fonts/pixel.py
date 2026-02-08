@@ -510,7 +510,6 @@ def render_text(text: str, spacing: int = 1) -> Template:
 
     # Build the grid by combining character patterns
     grid: list[list[int]] = [[] for _ in range(7)]
-    spacer_col = [0] * 7  # Empty column for spacing
 
     for i, char in enumerate(text):
         pattern = get_char_pattern(char)
